@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flink-apps
+  namespace: argocd
+spec:
+  project: project-flink
+  source:
+    repoURL: https://github.com/Krishna-coder1/argocd-example-apps.git
+    path: flink-apps 
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: flink
