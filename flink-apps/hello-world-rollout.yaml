@@ -4,7 +4,7 @@ kind: Rollout
 metadata:
   name: hello-world-rollout
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: hello-world
