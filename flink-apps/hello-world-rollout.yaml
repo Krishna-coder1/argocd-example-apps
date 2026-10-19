@@ -1,0 +1,19 @@
+
+apiVersion: apps/v1
+kind: Rollout
+metadata:
+  name: hello-world-rollout
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+        - name: hello
+          image: busybox:1.36
+          command: ["sh", "-c", "while true; do echo 'Hello World'; sleep 5; done"]
