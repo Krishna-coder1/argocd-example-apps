@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: hello-api
-  namespace: flink
+  namespace: bluegreen
 spec:
   replicas: 6
   selector:
