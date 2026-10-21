@@ -30,7 +30,7 @@ spec:
       steps:
         - setWeight: 30
         - pause:
-            duration: 2m
+            duration: 10m
 ---
 apiVersion: v1
 kind: Service
