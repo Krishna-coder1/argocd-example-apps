@@ -28,9 +28,9 @@ spec:
   strategy:
     canary:
       steps:
-        - setWeight: 20
+        - setWeight: 30
         - pause:
-            duration: 5s
+            duration: 2m
 ---
 apiVersion: v1
 kind: Service
