@@ -18,7 +18,7 @@ spec:
         - name: api
           image: hashicorp/http-echo:1.0.0
           args:
-            - "-text=Hello from blue"
+            - "-text=Hello from green"
             - "-listen=:8080"
           ports:
             - containerPort: 8080
@@ -26,4 +26,4 @@ spec:
     blueGreen:
       activeService: bluegreen-active
       previewService: bluegreen-preview
-      autoPromotionEnabled: false 
+      autoPromotionEnabled: false
