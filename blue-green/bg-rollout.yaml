@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: hello-api
+  name: hello-api-bg
   namespace: bluegreen
 spec:
   replicas: 6
