@@ -31,15 +31,3 @@ spec:
         - setWeight: 30
         - pause:
             duration: 10m
----
-apiVersion: v1 
-kind: Service 
-metadata:
-  name: simple-color-app
-spec:
-  type: NodePort 
-  ports:
-    - port: 3000
-      targetPort: 3000
-  selector:
-    app: hello-api
