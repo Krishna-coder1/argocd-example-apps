@@ -1,0 +1,29 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: hello-api
+  namespace: flink
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: bg-hello-api
+  template:
+    metadata:
+      labels:
+        app: bg-hello-api
+    spec:
+      containers:
+        - name: api
+          image: hashicorp/http-echo:1.0.0
+          args:
+            - "-text=Hello from blue"
+            - "-listen=:8080"
+          ports:
+            - containerPort: 8080
+  strategy:
+    bluegreen:
+      activeService: bluegreen-active
+      previewService: bluegreen-preview
+      autoPromotionEnabled: false 
