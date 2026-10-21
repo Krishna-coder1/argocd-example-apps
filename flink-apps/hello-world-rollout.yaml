@@ -20,7 +20,7 @@ spec:
         - name: api
           image: hashicorp/http-echo:1.0.0
           args:
-            - "-text=Hello from v10"
+            - "-text=Hello from v11"
             - "-listen=:8080"
           ports:
             - containerPort: 8080
@@ -30,10 +30,7 @@ spec:
       steps:
         - setWeight: 20
         - pause:
-            duration: 60s
-        - setWeight: 50
-        - pause:
-            duration: 60s
+            duration: {}
 ---
 apiVersion: v1
 kind: Service
