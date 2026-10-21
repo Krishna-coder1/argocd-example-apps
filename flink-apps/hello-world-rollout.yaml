@@ -32,14 +32,14 @@ spec:
         - pause:
             duration: 10m
 ---
-apiVersion: v1
-kind: Service
+apiVersion: v1 
+kind: Service 
 metadata:
-  name: hello-api
-  namespace: flink
+  name: simple-color-app
 spec:
+  type: NodePort 
+  ports:
+    - port: 3000
+      targetPort: 3000
   selector:
     app: hello-api
-  ports:
-    - port: 80
-      targetPort: 8080
